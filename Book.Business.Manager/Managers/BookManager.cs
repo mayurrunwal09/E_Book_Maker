@@ -175,16 +175,16 @@ namespace Book.Business.Manager.Managers
                 throw new InvalidOperationException($"Book with ID {bookId} not found.");
             }
 
-            // Check if the book is already paused
+         
             if (existingBook.Status == BookStatus.Incomplete)
             {
                 return "Book is already paused.";
             }
 
-            // Set the book status to paused
+       
             existingBook.Status = BookStatus.Incomplete;
 
-            // Update the last modified timestamp
+           
             existingBook.Updated = Helper.GetCurrentUTCDatetime();
 
             await _bookRepository.SaveChangesAysnc();
@@ -201,16 +201,16 @@ namespace Book.Business.Manager.Managers
                 throw new InvalidOperationException($"Book with ID {bookId} not found.");
             }
 
-            // Check if the book is already resumed
+            
             if (existingBook.Status == BookStatus.Complete)
             {
                 return "Book is already resumed.";
             }
 
-            // Set the book status to resumed
+            
             existingBook.Status = BookStatus.Complete;
 
-            // Update the last modified timestamp
+            
             existingBook.Updated = Helper.GetCurrentUTCDatetime();
 
             await _bookRepository.SaveChangesAysnc();
