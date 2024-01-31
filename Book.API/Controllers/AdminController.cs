@@ -204,7 +204,7 @@ namespace Book.API.Controllers
                 using (var client = new SmtpClient())
                 {
                     await client.ConnectAsync("smtp.gmail.com", 587, false);
-                    await client.AuthenticateAsync("mayurrunwal9@gmail.com", "lhyb gcdp jfgl xxux"); 
+                    await client.AuthenticateAsync("mayurrunwal9@gmail.com", "Google App Password"); 
                     await client.SendAsync(message);
                     await client.DisconnectAsync(true);
                 }
